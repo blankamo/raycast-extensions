@@ -5,7 +5,7 @@
 import { useCachedPromise, showFailureToast } from "@raycast/utils";
 import { getPinworkAvailability } from "../api/pinwork";
 
-const initialAvailability = { installed: true, running: true };
+const initialAvailability = { installed: false, running: false };
 
 export function usePinworkAvailability() {
   const { data, isLoading, error, revalidate } = useCachedPromise(

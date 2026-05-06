@@ -4,18 +4,11 @@
 
 import { getPreferenceValues } from "@raycast/api";
 
-interface PinworkPreferences {
-  /** Whether to show completed tasks in list views */
-  showCompletedTasks: boolean;
-  /** Default list to show when opening the extension */
-  defaultList: "today" | "inbox" | "next";
-}
-
 /**
  * Gets the user's extension preferences.
  */
-export function getPreferences(): PinworkPreferences {
-  return getPreferenceValues<PinworkPreferences>();
+export function getPreferences(): Preferences {
+  return getPreferenceValues<Preferences>();
 }
 
 /**

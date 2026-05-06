@@ -42,8 +42,8 @@ export interface ReadOptions {
 }
 
 export async function getPinworkAvailability(): Promise<PinworkAvailability> {
-  const apps = await getApplications();
-  const [registered, running] = await Promise.all([
+  const [apps, registered, running] = await Promise.all([
+    getApplications(),
     isPinworkRegistered(),
     isPinworkRunning(),
   ]);
