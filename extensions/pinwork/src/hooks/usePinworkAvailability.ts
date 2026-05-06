@@ -13,8 +13,11 @@ export function usePinworkAvailability() {
     [],
     {
       initialData: initialAvailability,
-      onError: (err) =>
-        showFailureToast(err, { title: "Unable to check Pinwork status" }),
+      onError: async (err) => {
+        await showFailureToast(err, {
+          title: "Unable to check Pinwork status",
+        });
+      },
     },
   );
 
