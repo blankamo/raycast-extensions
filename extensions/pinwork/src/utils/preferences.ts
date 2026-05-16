@@ -17,10 +17,3 @@ export function getPreferences(): Preferences {
 export function shouldShowCompletedTasks(): boolean {
   return getPreferences().showCompletedTasks;
 }
-
-/**
- * Gets the default list to display.
- */
-export function getDefaultList(): "today" | "inbox" | "next" {
-  return getPreferences().defaultList;
-}

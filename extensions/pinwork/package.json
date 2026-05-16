@@ -22,29 +22,6 @@
       "label": "Show completed tasks",
       "description": "Include recently completed tasks in list views",
       "required": false
-    },
-    {
-      "name": "defaultList",
-      "type": "dropdown",
-      "default": "today",
-      "title": "Default List",
-      "label": "Default list",
-      "description": "Which list to show when opening the extension",
-      "required": false,
-      "data": [
-        {
-          "title": "Today",
-          "value": "today"
-        },
-        {
-          "title": "Inbox",
-          "value": "inbox"
-        },
-        {
-          "title": "Next",
-          "value": "next"
-        }
-      ]
     }
   ],
   "commands": [
