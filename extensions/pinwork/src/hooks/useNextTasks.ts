@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { useCachedPromise } from "@raycast/utils";
 import { getAllTasks } from "../api/pinwork";
 import { addDays, startOfDay } from "date-fns";
+import { shouldShowCompletedTasks } from "../utils/preferences";
 
 export function useNextTasks(options?: { execute?: boolean }) {
   const abortable = useRef<AbortController | null>(null);
@@ -21,13 +22,14 @@ export function useNextTasks(options?: { execute?: boolean }) {
     },
   );
 
+  const showCompleted = shouldShowCompletedTasks();
   const now = new Date();
   const today = startOfDay(now);
   const twoWeeksLater = addDays(today, 14);
 
   const tasks = data
     .filter((task) => {
-      if (task.isCompleted) return false;
+      if (!showCompleted && task.isCompleted) return false;
       if (!task.scheduledDate) return false;
       const taskDate = startOfDay(task.scheduledDate);
       return taskDate > today && taskDate <= twoWeeksLater;
