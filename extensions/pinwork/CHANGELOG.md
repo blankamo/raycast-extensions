@@ -1,4 +1,4 @@
-## [Initial Version] - {PR_MERGE_DATE}
+## [Initial Version] - 2026-05-26
 
 - Show Today, Inbox, and Next task views
 - Quick Add with natural language parsing
